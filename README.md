@@ -1,6 +1,6 @@
 # Activate travis ci on repo creation
 
-This is primarily for users of GitHub Classroom, but may benefit anyone using an org with private repos on GitHub. __Note:__ This version only supports travis-ci.com accounts (private repos), and not .org free repos. Feel free to remix and roll your own version if you need .org support. The only change will be swapping the API calls in `server.js` to use .org rather than .com.
+This is primarily for users of GitHub Classroom, but may benefit anyone using an org with private repos on GitHub. **Note:** This version only supports travis-ci.com accounts (private repos), and not .org free repos. Feel free to remix and roll your own version if you need .org support. The only change will be swapping the API calls in `server.js` to use .org rather than .com.
 
 ## The Problem
 
@@ -30,3 +30,11 @@ Save and you're all set!
 ## Caveats
 
 The Travis API is somewhat basic when it comes to feedback. As a result some assumptions and guessing goes into how long it takes certain actions to take place. If you notice activations failing, please let me know.
+
+Not comfortable with the code as is? Remix your own on Glitch!
+
+<!-- Remix Button -->
+
+<a href="https://glitch.com/edit/#!/remix/github-to-travis">
+  <img src="https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fremix%402x.png?1513093958726" alt="remix button" aria-label="remix" height="33">
+</a>
