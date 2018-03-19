@@ -1,7 +1,8 @@
 {
   "name": "webhook-activate-travis",
   "version": "0.0.1",
-  "description": "Accept a GitHub webhook to activate travis ci on repo creation.",
+  "description":
+    "Accept a GitHub webhook to activate travis ci on repo creation.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -11,13 +12,9 @@
     "body-parser": "1.14.2",
     "axios": "^0.18.0"
   },
-  "engines": {
-    "node": "8.10.0"
+  "now": {
+    "alias": "github-travis-activation"
   },
-  "keywords": [
-    "node",
-    "express",
-    "api"
-  ],
+  "keywords": ["node", "express", "api"],
   "license": "MIT"
 }
