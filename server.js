@@ -14,9 +14,7 @@ function activate(req, res) {
   const token = req.params.token
   if (
     req.headers["x-github-event"] &&
-    req.headers["x-github-event"] === "repository" &&
-    req.body.action &&
-    req.body.action === "created"
+    req.headers["x-github-event"] === "create"
   ) {
     // Sending initial status 200 back to avoid webhook timeout
     res.status("200").send("Activation attempt in progress")
@@ -27,7 +25,11 @@ function activate(req, res) {
           activateRepository(token, reponame)
         })
       )
-      .catch(err => console.log("Error occurred", err))
+      .catch(err =>
+        console.log(
+          "Error occurred while getting user ID. Token may be invalid"
+        )
+      )
   } else {
     res.status("200").send("Non-repository event; ignoring")
   }
@@ -94,6 +96,15 @@ async function activateRepository(token, reponame) {
         Authorization: `token ${token}`,
         "Travis-API-Version": "3"
       }
-    }).catch(err => console.log("Error activating repo"))
+    })
+      .catch(err => {
+        if (err.reponse.data.error_type == "not_found") {
+          console.log("Repo not found yet, retrying")
+          setTimeout(() => {
+            activateRepository(token, reponame)
+          })
+        }
+      })
+      .then(data => console.log("Repo successfully activated"))
   }
 }

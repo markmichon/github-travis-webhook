@@ -23,7 +23,7 @@ Next, create a new webhook from the settings page of your Organization `https://
 
 The payload url will be the `https://github-to-travis.glitch.me/activate/YOUR_TOKEN_HERE`. Sub in the token retrieved in the previous step.
 
-Under 'Which events would you like to trigger the webhook?' choose 'Let me select individual events' and check the 'Repositories' option. The rest can be unchecked.
+Under 'Which events would you like to trigger the webhook?' choose 'Let me select individual events' and check the 'Branch or Tag Creation' option. The rest can be unchecked. _Due to the way Github classroom handles creating repos, branch creation appears to be the last step and will cause the least amount of problems)_
 
 Save and you're all set!
 
