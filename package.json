@@ -5,7 +5,8 @@
     "Accept a GitHub webhook to activate travis ci on repo creation.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "now": "now --public"
   },
   "dependencies": {
     "express": "^4.12.4",
