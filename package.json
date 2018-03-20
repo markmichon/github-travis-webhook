@@ -14,6 +14,7 @@
     "axios": "^0.18.0"
   },
   "now": {
+    "name": "github-travis-activation",
     "alias": "github-travis-activation"
   },
   "keywords": ["node", "express", "api"],
